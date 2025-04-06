@@ -13,6 +13,13 @@ import AsciiDonut from '@/components/AsciiDonut';
 export default function Home() {
   const projects = [
     {
+      title: 'OpenAI Sales Email Chrome Extension',
+      description: 'A sleek Gmail Chrome extension that drafts personalized sales emails using OpenAI, Clearbit, and RAG-enhanced templates-designed with a clean UI and deployed to 40+ users',
+      imageUrl: '/images/cold_email.jpg',
+      technologies: ['Chrome Extension', 'OpenAI API', 'Clearbit API', 'RAG', 'TypeScript'],
+      projectUrl: 'https://github.com/SimonNRisk/automating_sales_emails',
+    },
+    {
       title: 'Wait-Time Estimator',
       description: 'A full-stack web tool that predicts real-time wait times and line lengths at campus hotspots using Google APIs, web scraping, and custom algorithms-built with Next.js and Python, and powered by self-collected data on seating and traffic flow',
       imageUrl: '/images/qwait_pic.jpg',
@@ -25,13 +32,6 @@ export default function Home() {
       imageUrl: '/images/audio.jpg',
       technologies: ['SwiftUI', 'RestAPI', 'Geometry-Based Models', 'Tree-Based Models'],
       projectUrl: 'https://github.com/IsaiahIruoha/music-genre-detector-ios',
-    },
-    {
-      title: 'OpenAI Sales Email Chrome Extension',
-      description: 'A sleek Gmail Chrome extension that drafts personalized sales emails using OpenAI, Clearbit, and RAG-enhanced templates-designed with a clean UI and deployed to 40+ users',
-      imageUrl: '/images/cold_email.jpg',
-      technologies: ['Chrome Extension', 'OpenAI API', 'Clearbit API', 'RAG', 'TypeScript'],
-      projectUrl: 'https://github.com/SimonNRisk/automating_sales_emails',
     },
   ];
 
