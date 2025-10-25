@@ -108,20 +108,6 @@ export default function Home() {
                 className="delay-1000"
               />
             </p>
-            <div className="flex justify-center space-x-6">
-              <a
-                href="#projects"
-                className="inline-block px-8 py-4 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-all duration-300 text-lg font-medium"
-              >
-                View My Work
-              </a>
-              <a
-                href="#contact"
-                className="inline-block px-8 py-4 bg-white text-gray-900 rounded-lg hover:bg-gray-50 transition-all duration-300 text-lg font-medium border border-gray-200 hover:border-gray-300"
-              >
-                Contact Me
-              </a>
-            </div>
           </div>
         </section>
 
