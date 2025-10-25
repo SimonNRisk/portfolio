@@ -11,6 +11,7 @@ import AnimatedText from "@/components/AnimatedText";
 import AsciiDonut from "@/components/AsciiDonut";
 import { SimonPhotoButton } from "@/components/SimonPhotoButton";
 import { ScrollArrow } from "@/components/ScrollArrow";
+import { CodedToday } from "@/components/CodedToday";
 
 export default function Home() {
   const projects = [
@@ -118,9 +119,7 @@ export default function Home() {
         <section id="about" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4 max-w-3xl text-center">
             <SimonPhotoButton />
-            <h2 className="text-5xl font-bold mb-6 text-gray-900">
-              <AnimatedText text="About Me" />
-            </h2>
+            <h2 className="text-5xl font-bold mb-6 text-gray-900">About Me</h2>
             <p className="text-gray-600 dark:text-gray-600 text-lg leading-relaxed">
               I'm currently an Applied Mathematics & Engineering student at Queen's University, specializing in Computer
               Engineering. I really like software, and I'm really passionate about my work doing something good for the
@@ -183,14 +182,13 @@ export default function Home() {
         {/* Projects Section */}
         <section id="projects" className="py-32 px-4">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-6 text-center text-gray-900 tracking-tight">
-              <AnimatedText text="Featured Projects" />
-            </h2>
+            <h2 className="text-4xl font-bold mb-6 text-center text-gray-900 tracking-tight">Featured Projects</h2>
             <p className="text-gray-600 text-center mb-4 max-w-2xl mx-auto leading-relaxed text-lg">
-              <AnimatedText text="Here are some of my recent projects that showcase my skills and experience building cool stuff with software." />
+              Here are some of my recent projects that showcase my skills and experience building cool stuff with
+              software.
             </p>
             <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto leading-relaxed text-lg font-semibold">
-              <AnimatedText text="Click on them to see the deployed projects, a demo video, or the github repo" />
+              Click on them to see the deployed projects, a demo video, or the github repo
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -204,12 +202,11 @@ export default function Home() {
         {/* Skills Section */}
         <section id="skills" className="py-32 px-4 bg-gray-50">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold mb-6 text-center text-gray-900 tracking-tight">
-              <AnimatedText text="Skills & Expertise" />
-            </h2>
+            <h2 className="text-4xl font-bold mb-6 text-center text-gray-900 tracking-tight">Skills & Expertise</h2>
             <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto leading-relaxed text-lg">
-              <AnimatedText text="My love for engineering spans across many different sectors" />
+              My love for engineering spans across many different sectors <CodedToday />
             </p>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
               {skills.map((skill, index) => (
                 <SkillCard key={index} {...skill} />
@@ -221,11 +218,10 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="py-32 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 tracking-tight">
-              <AnimatedText text="Let's Work Together" />
-            </h2>
+            <h2 className="text-4xl font-bold mb-6 text-gray-900 tracking-tight">Let's Work Together</h2>
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              <AnimatedText text="I'm always interested in hearing about new projects and opportunities. Let's work together to create something amazing!" />
+              I'm always interested in hearing about new projects and opportunities. Let's work together to create
+              something amazing!
             </p>
             <div className="flex justify-center space-x-6">
               <a
