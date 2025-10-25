@@ -27,21 +27,34 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@keyframes bounce-3-times {
+@keyframes bounce-5-times {
   0%,
-  25%,
+  10%,
+  20%,
+  30%,
+  40%,
   50%,
-  75%,
+  60%,
+  70%,
+  80%,
+  90%,
   100% {
     transform: translateY(0);
   }
-  12.5%,
-  37.5%,
-  62.5% {
+  5%,
+  15%,
+  25%,
+  35%,
+  45%,
+  55%,
+  65%,
+  75%,
+  85%,
+  95% {
     transform: translateY(-10px);
   }
 }
 
-.animate-bounce-3-times {
-  animation: bounce-3-times 8s ease-in-out;
+.animate-bounce-5-times {
+  animation: bounce-5-times 10s ease-in-out;
 }
