@@ -14,8 +14,11 @@ export function SimonPhotoButton() {
   const handleClick = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
+  const handleHover = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
   return (
-    <button onClick={handleClick}>
+    <button onClick={handleClick} onMouseEnter={handleHover}>
       <img
         src={images[currentImageIndex]}
         alt="Simon"
