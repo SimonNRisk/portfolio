@@ -30,28 +30,25 @@ export function CodedToday() {
   }, []);
 
   if (loading) {
-    return (
-      <div className="text-center py-4">
-        <div className="text-gray-600">Loading coding stats...</div>
-      </div>
-    );
+    return <span>Loading coding stats... </span>;
   }
 
   if (error) {
     return (
-      <div className="text-center py-4">
-        <div className="text-red-600">Error: {error}</div>
-      </div>
+      <span className="text-red-600">
+        But, I clearly haven't coded enough. This is supposed to tell you how many contributions I've made today, but no
+        I got an error: {error}
+      </span>
     );
   }
 
   return (
-    <div className="text-center py-4">
-      <div className="inline-block bg-white rounded-lg shadow-md px-6 py-3 border">
-        <span className="text-gray-700 font-medium">
-          Coded Today: <span className="text-blue-600 font-bold">{totalToday}</span> contributions
-        </span>
-      </div>
-    </div>
+    <span>
+      In fact, I've even made{" "}
+      <a href="https://github.com/SimonNRisk" target="_blank" rel="noopener noreferrer" className="underline">
+        {totalToday} contributions today
+      </a>
+      !
+    </span>
   );
 }
