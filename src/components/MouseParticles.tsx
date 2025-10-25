@@ -15,13 +15,11 @@ interface Particle {
 
 export default function MouseParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const x = e.clientX;
       const y = e.clientY;
-      setMousePosition({ x, y });
 
       // Create multiple particles at once for a better effect
       for (let i = 0; i < 3; i++) {
