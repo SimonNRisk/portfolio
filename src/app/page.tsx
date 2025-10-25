@@ -12,6 +12,8 @@ import AsciiDonut from "@/components/AsciiDonut";
 import { SimonPhotoButton } from "@/components/SimonPhotoButton";
 import { ScrollArrow } from "@/components/ScrollArrow";
 import { CodedToday } from "@/components/CodedToday";
+import { Timeline } from "@/components/Timeline";
+import { getSortedTimelineData } from "@/data/timelineData";
 
 export default function Home() {
   const projects = [
@@ -120,51 +122,20 @@ export default function Home() {
           <div className="container mx-auto px-4 max-w-3xl text-center">
             <SimonPhotoButton />
             <h2 className="text-5xl font-bold mb-6 text-gray-900">About Me</h2>
-            <p className="text-gray-600 dark:text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-600 text-lg leading-relaxed mb-12">
               I'm currently an Applied Mathematics & Engineering student at Queen's University, specializing in Computer
               Engineering. I really like software, and I'm really passionate about my work doing something good for the
               world - whatever that may be.
-              <br />
-              <br />I spent summer `25 at
-              <a
-                href="https://www.bankonloop.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold underline ml-1"
-              >
-                Loop Financial
-              </a>{" "}
-              as a <strong>Software Engineering Intern</strong>. I had tons of fun, and worked across the stack with{" "}
-              <strong>Typescript, React, Ruby on Rails, and GraphQL</strong>. During my time @ Loop, I was treated like
-              a regular member of the engineering team - I did a few weeks as the on-call engineer, led the development
-              of a high-impact few features, and ran our daily syncs.
-              <br />
-              <br />
-              At Queen's, I'm a <strong>Project Manager</strong> (previously Software Consultant) at
-              <a
-                href="https://www.creosolutions.ca"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold underline ml-1"
-              >
-                CREO Solutions
-              </a>
-              , where I've led the development of full-stack, AI-integrated products for real-world clients. I'm also a
-              member of
-              <a
-                href="https://www.qtma.ca"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold underline mx-1"
-              >
-                QTMA
-              </a>
-              , Queen's leading product incubator.
-              <br />
-              <br />
-              Previously, I built a speech therapy startup that generated over <strong>$2K in revenue</strong>, and I’m
-              proud to say I’m a <strong>4× intramural volleyball champion</strong>.
             </p>
+          </div>
+
+          {/* Timeline Section */}
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">My Journey</h3>
+              <p className="text-gray-600 text-lg">A timeline of my professional and personal experiences</p>
+            </div>
+            <Timeline data={getSortedTimelineData()} />
           </div>
         </section>
 
