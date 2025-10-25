@@ -26,3 +26,22 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes bounce-3-times {
+  0%,
+  25%,
+  50%,
+  75%,
+  100% {
+    transform: translateY(0);
+  }
+  12.5%,
+  37.5%,
+  62.5% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-3-times {
+  animation: bounce-3-times 8s ease-in-out;
+}

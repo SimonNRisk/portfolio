@@ -10,6 +10,7 @@ import MouseParticles from "@/components/MouseParticles";
 import AnimatedText from "@/components/AnimatedText";
 import AsciiDonut from "@/components/AsciiDonut";
 import { SimonPhotoButton } from "@/components/SimonPhotoButton";
+import { ScrollArrow } from "@/components/ScrollArrow";
 
 export default function Home() {
   const projects = [
@@ -109,6 +110,7 @@ export default function Home() {
               />
             </p>
           </div>
+          <ScrollArrow />
         </section>
 
         {/* About Section */}
