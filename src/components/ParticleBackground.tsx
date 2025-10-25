@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 interface Particle {
   x: number;
@@ -29,21 +29,21 @@ export default function ParticleBackground() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     // Set canvas size
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1;
       const rect = canvas.getBoundingClientRect();
-      
+
       canvas.width = rect.width * dpr;
       canvas.height = rect.height * dpr;
-      
+
       ctx.scale(dpr, dpr);
     };
     resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener("resize", resizeCanvas);
 
     // Initialize particles
     const initParticles = () => {
@@ -70,7 +70,7 @@ export default function ParticleBackground() {
         y: e.clientY - rect.top,
       };
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     // Animation
     const animate = () => {
@@ -114,8 +114,8 @@ export default function ParticleBackground() {
 
     // Cleanup
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("resize", resizeCanvas);
+      window.removeEventListener("mousemove", handleMouseMove);
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
@@ -124,11 +124,5 @@ export default function ParticleBackground() {
 
   if (!isMounted) return null;
 
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.3 }}
-    />
-  );
-} 
+  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0" style={{ opacity: 0.3 }} />;
+}

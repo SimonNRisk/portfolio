@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 interface SkillCardProps {
   name: string;
@@ -18,4 +18,4 @@ export default function SkillCard({ name, icon, description }: SkillCardProps) {
       <p className="text-gray-600 leading-relaxed">{description}</p>
     </div>
   );
-} 
+}

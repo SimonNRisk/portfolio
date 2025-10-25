@@ -1,55 +1,53 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: 'class',
+  darkMode: "class",
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       typography: {
         DEFAULT: {
           css: {
-            maxWidth: 'none',
-            color: 'inherit',
+            maxWidth: "none",
+            color: "inherit",
             a: {
-              color: 'inherit',
-              textDecoration: 'none',
+              color: "inherit",
+              textDecoration: "none",
             },
             h1: {
-              color: 'inherit',
+              color: "inherit",
             },
             h2: {
-              color: 'inherit',
+              color: "inherit",
             },
             h3: {
-              color: 'inherit',
+              color: "inherit",
             },
             h4: {
-              color: 'inherit',
+              color: "inherit",
             },
             strong: {
-              color: 'inherit',
+              color: "inherit",
             },
             code: {
-              color: 'inherit',
+              color: "inherit",
             },
             pre: {
-              color: 'inherit',
+              color: "inherit",
             },
           },
         },
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
-}
-export default config 
+  plugins: [require("@tailwindcss/typography")],
+};
+export default config;

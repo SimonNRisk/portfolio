@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 interface Particle {
   x: number;
@@ -18,26 +18,26 @@ export default function MouseParticles() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    console.log('MouseParticles component mounted');
-    
+    console.log("MouseParticles component mounted");
+
     const handleMouseMove = (e: MouseEvent) => {
       const x = e.clientX;
       const y = e.clientY;
-      console.log('Mouse moved to:', x, y);
+      console.log("Mouse moved to:", x, y);
       setMousePosition({ x, y });
-      
+
       // Create multiple particles at once for a better effect
       for (let i = 0; i < 3; i++) {
         createParticle(x, y);
       }
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   useEffect(() => {
-    console.log('Current particles:', particles.length);
+    console.log("Current particles:", particles.length);
     const interval = setInterval(() => {
       setParticles((prevParticles) => {
         const updatedParticles = prevParticles
@@ -103,4 +103,4 @@ export default function MouseParticles() {
       ))}
     </div>
   );
-} 
+}

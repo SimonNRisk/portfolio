@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -13,11 +13,8 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <div className="fixed inset-0 z-50 md:hidden">
       {/* Backdrop */}
-      <div
-        className="fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity"
-        onClick={onClose}
-      />
-      
+      <div className="fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity" onClick={onClose} />
+
       {/* Menu */}
       <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white dark:bg-gray-900 shadow-xl transform transition-transform duration-300 ease-in-out">
         <div className="flex flex-col h-full">
@@ -36,16 +33,11 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
-          
+
           <nav className="flex-1 p-4">
             <ul className="space-y-4">
               <li>
@@ -90,4 +82,4 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       </div>
     </div>
   );
-} 
+}

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
 
 interface ProjectCardProps {
   title: string;
@@ -11,13 +11,7 @@ interface ProjectCardProps {
   projectUrl: string;
 }
 
-export default function ProjectCard({
-  title,
-  description,
-  imageUrl,
-  technologies,
-  projectUrl,
-}: ProjectCardProps) {
+export default function ProjectCard({ title, description, imageUrl, technologies, projectUrl }: ProjectCardProps) {
   return (
     <a
       href={projectUrl}
@@ -40,10 +34,7 @@ export default function ProjectCard({
         <p className="text-gray-600 mb-4 leading-relaxed">{description}</p>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
-            >
+            <span key={index} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
               {tech}
             </span>
           ))}

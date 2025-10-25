@@ -17,13 +17,7 @@ export default function Home() {
       description:
         "A sleek Gmail Chrome extension that drafts personalized sales emails using OpenAI, Clearbit, and RAG-enhanced templates-designed with a clean UI and deployed to 40+ users",
       imageUrl: "/images/cold_email.jpg",
-      technologies: [
-        "Chrome Extension",
-        "OpenAI API",
-        "Clearbit API",
-        "RAG",
-        "TypeScript",
-      ],
+      technologies: ["Chrome Extension", "OpenAI API", "Clearbit API", "RAG", "TypeScript"],
       projectUrl: "https://github.com/SimonNRisk/automating_sales_emails",
     },
     {
@@ -31,14 +25,7 @@ export default function Home() {
       description:
         "To help keep myself productive, I built a website with Typescript, Next.js, and Firebase, that shows the live status of my daily checklist (resetting daily via a cron job). Friends can sign up with their email and recieve emails when I fail to get my stuff done on-time.",
       imageUrl: "/images/acc.png",
-      technologies: [
-        "Next.js",
-        "TypeScript",
-        "Tailwind CSS",
-        "Cron jobs",
-        "Sendgrid",
-        "Firebase",
-      ],
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Cron jobs", "Sendgrid", "Firebase"],
       projectUrl: "https://accountability-buddy-opal.vercel.app/",
     },
     {
@@ -46,12 +33,7 @@ export default function Home() {
       description:
         'An modern, user-friendly iOS application that listens to real-time songs, identifies their genres and "vibe", and saved them for periodic vibe overviews',
       imageUrl: "/images/audio.jpg",
-      technologies: [
-        "SwiftUI",
-        "RestAPI",
-        "Geometry-Based Models",
-        "Tree-Based Models",
-      ],
+      technologies: ["SwiftUI", "RestAPI", "Geometry-Based Models", "Tree-Based Models"],
       projectUrl: "https://github.com/IsaiahIruoha/music-genre-detector-ios",
     },
   ];
@@ -60,12 +42,7 @@ export default function Home() {
     {
       name: "Frontend Development",
       icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -80,12 +57,7 @@ export default function Home() {
     {
       name: "Backend Development",
       icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -100,12 +72,7 @@ export default function Home() {
     {
       name: "AI/ML Research",
       icon: (
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -169,10 +136,9 @@ export default function Home() {
               <AnimatedText text="About Me" />
             </h2>
             <p className="text-gray-600 dark:text-gray-600 text-lg leading-relaxed">
-              I'm currently an Applied Mathematics & Engineering student at
-              Queen's University, specializing in Computer Engineering. I really
-              like software, and I'm really passionate about my work doing
-              something good for the world - whatever that may be.
+              I'm currently an Applied Mathematics & Engineering student at Queen's University, specializing in Computer
+              Engineering. I really like software, and I'm really passionate about my work doing something good for the
+              world - whatever that may be.
               <br />
               <br />I spent summer `25 at
               <a
@@ -183,17 +149,13 @@ export default function Home() {
               >
                 Loop Financial
               </a>{" "}
-              as a <strong>Software Engineering Intern</strong>. I had tons of
-              fun, and worked across the stack with{" "}
-              <strong>Typescript, React, Ruby on Rails, and GraphQL</strong>.
-              During my time @ Loop, I was treated like a regular member of the
-              engineering team - I did a few weeks as the on-call engineer, led
-              the development of a high-impact few features, and ran our daily
-              syncs.
+              as a <strong>Software Engineering Intern</strong>. I had tons of fun, and worked across the stack with{" "}
+              <strong>Typescript, React, Ruby on Rails, and GraphQL</strong>. During my time @ Loop, I was treated like
+              a regular member of the engineering team - I did a few weeks as the on-call engineer, led the development
+              of a high-impact few features, and ran our daily syncs.
               <br />
               <br />
-              At Queen's, I'm a <strong>Project Manager</strong> (previously
-              Software Consultant) at
+              At Queen's, I'm a <strong>Project Manager</strong> (previously Software Consultant) at
               <a
                 href="https://www.creosolutions.ca"
                 target="_blank"
@@ -202,8 +164,8 @@ export default function Home() {
               >
                 CREO Solutions
               </a>
-              , where I've led the development of full-stack, AI-integrated
-              products for real-world clients. I'm also a member of
+              , where I've led the development of full-stack, AI-integrated products for real-world clients. I'm also a
+              member of
               <a
                 href="https://www.qtma.ca"
                 target="_blank"
@@ -215,9 +177,8 @@ export default function Home() {
               , Queen's leading product incubator.
               <br />
               <br />
-              Previously, I built a speech therapy startup that generated over{" "}
-              <strong>$2K in revenue</strong>, and I’m proud to say I’m a{" "}
-              <strong>4× intramural volleyball champion</strong>.
+              Previously, I built a speech therapy startup that generated over <strong>$2K in revenue</strong>, and I’m
+              proud to say I’m a <strong>4× intramural volleyball champion</strong>.
             </p>
           </div>
         </section>

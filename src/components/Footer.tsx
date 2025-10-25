@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 
 export default function Footer() {
   return (
@@ -8,18 +8,14 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              About Me
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">About Me</h3>
             <p className="text-gray-600 dark:text-gray-300">
               An engineering student who's all about startups and building tech for good.
             </p>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              Quick Links
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <a
@@ -55,11 +51,9 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-              Connect
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Connect</h3>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/SimonNRisk"
@@ -105,7 +99,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-center text-gray-600 dark:text-gray-300">
             © {new Date().getFullYear()} Simon Risk. All rights reserved.

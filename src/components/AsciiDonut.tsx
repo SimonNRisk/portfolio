@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from "react";
 
 export default function AsciiDonut() {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number | null>(null);
 
-  const [frame, setFrame] = useState('');
+  const [frame, setFrame] = useState("");
   const rotation = useRef({ x: 0, y: 0 });
   const lastMouse = useRef<{ x: number; y: number } | null>(null);
   const isDragging = useRef(false);
@@ -29,16 +29,20 @@ export default function AsciiDonut() {
     const A = rotation.current.x;
     const B = rotation.current.y;
 
-    const chars = '.,-~:;=!*#$@';
-    const output = Array(1760).fill(' ');
+    const chars = ".,-~:;=!*#$@";
+    const output = Array(1760).fill(" ");
     const zbuffer = Array(1760).fill(0);
 
     for (let j = 0; j < Math.PI * 2; j += 0.07) {
       for (let i = 0; i < Math.PI * 2; i += 0.02) {
-        const sinA = Math.sin(A), cosA = Math.cos(A);
-        const sinB = Math.sin(B), cosB = Math.cos(B);
-        const sinI = Math.sin(i), cosI = Math.cos(i);
-        const sinJ = Math.sin(j), cosJ = Math.cos(j);
+        const sinA = Math.sin(A),
+          cosA = Math.cos(A);
+        const sinB = Math.sin(B),
+          cosB = Math.cos(B);
+        const sinI = Math.sin(i),
+          cosI = Math.cos(i);
+        const sinJ = Math.sin(j),
+          cosJ = Math.cos(j);
 
         const h = cosJ + 2;
         const D = 1 / (sinI * h * sinA + sinJ * cosA + 5);
@@ -49,11 +53,7 @@ export default function AsciiDonut() {
         const o = x + 80 * y;
 
         const N = Math.floor(
-          8 *
-            ((sinJ * sinA - sinI * cosJ * cosA) * cosB -
-              sinI * cosJ * sinA -
-              sinJ * cosA -
-              cosI * cosJ * sinB)
+          8 * ((sinJ * sinA - sinI * cosJ * cosA) * cosB - sinI * cosJ * sinA - sinJ * cosA - cosI * cosJ * sinB)
         );
 
         if (22 > y && y > 0 && x > 0 && 80 > x && D > zbuffer[o]) {
@@ -63,9 +63,9 @@ export default function AsciiDonut() {
       }
     }
 
-    let text = '';
+    let text = "";
     for (let i = 0; i < 1760; i++) {
-      text += i % 80 ? output[i] : '\n';
+      text += i % 80 ? output[i] : "\n";
     }
 
     setFrame(text);
@@ -110,10 +110,7 @@ export default function AsciiDonut() {
       onMouseLeave={handleMouseUp}
       className="w-[420px] h-[420px] p-4 rounded-2xl bg-transparent backdrop-blur-md shadow-none border-none flex items-center justify-center select-none cursor-grab active:cursor-grabbing"
     >
-      <pre className="text-[10px] leading-[10px] font-mono text-black select-none">
-        {frame}
-      </pre>
+      <pre className="text-[10px] leading-[10px] font-mono text-black select-none">{frame}</pre>
     </div>
-
   );
 }
