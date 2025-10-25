@@ -9,6 +9,7 @@ import SkillCard from "@/components/SkillCard";
 import MouseParticles from "@/components/MouseParticles";
 import AnimatedText from "@/components/AnimatedText";
 import AsciiDonut from "@/components/AsciiDonut";
+import { SimonPhotoButton } from "@/components/SimonPhotoButton";
 
 export default function Home() {
   const projects = [
@@ -127,11 +128,7 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="py-20 bg-gray-50">
           <div className="container mx-auto px-4 max-w-3xl text-center">
-            <img
-              src="/images/simon.jpg"
-              alt="Simon"
-              className="mx-auto mb-6 w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-md"
-            />
+            <SimonPhotoButton />
             <h2 className="text-5xl font-bold mb-6 text-gray-900">
               <AnimatedText text="About Me" />
             </h2>
