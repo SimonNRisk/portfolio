@@ -11,6 +11,7 @@ import AnimatedText from "@/components/AnimatedText";
 import AsciiDonut from "@/components/AsciiDonut";
 import { SimonPhotoButton } from "@/components/SimonPhotoButton";
 import { ScrollArrow } from "@/components/ScrollArrow";
+import { CodedToday } from "@/components/CodedToday";
 
 export default function Home() {
   const projects = [
@@ -216,6 +217,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <CodedToday />
         </section>
 
         {/* Contact Section */}
