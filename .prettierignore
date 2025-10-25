@@ -1,0 +1,16 @@
+# include all folders
+!**/
+
+# include files to format
+!*.ts
+!*.tsx
+!*.json
+!*.yaml
+!*.yml
+!*.md
+!*.mjs
+
+# exclusions
+# **/*.d.ts
+node_modules/*
+public/*
