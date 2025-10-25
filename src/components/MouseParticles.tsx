@@ -18,12 +18,9 @@ export default function MouseParticles() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    console.log("MouseParticles component mounted");
-
     const handleMouseMove = (e: MouseEvent) => {
       const x = e.clientX;
       const y = e.clientY;
-      console.log("Mouse moved to:", x, y);
       setMousePosition({ x, y });
 
       // Create multiple particles at once for a better effect
@@ -37,7 +34,6 @@ export default function MouseParticles() {
   }, []);
 
   useEffect(() => {
-    console.log("Current particles:", particles.length);
     const interval = setInterval(() => {
       setParticles((prevParticles) => {
         const updatedParticles = prevParticles
