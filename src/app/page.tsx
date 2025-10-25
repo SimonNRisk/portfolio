@@ -107,6 +107,7 @@ export default function Home() {
               <AnimatedText
                 text="Welcome to my portfolio! This is where I (somewhat infrequently) publish the projects that I've finished and the coolest thing I'm working on"
                 className="delay-1000"
+                speed={20}
               />
             </p>
           </div>
