@@ -13,17 +13,16 @@ export function ScrollArrow() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      scrollToAbout();
       setIsVisible(false);
     }, 11000);
 
     return () => clearTimeout(timer);
   }, []);
 
-  if (!isVisible) return null;
-
   return (
-    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+    <div
+      className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-1000 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+    >
       <button onClick={scrollToAbout} className="group cursor-pointer transition-all duration-300 hover:scale-110">
         <div className="animate-bounce-5-times">
           <svg
