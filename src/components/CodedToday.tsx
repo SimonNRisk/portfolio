@@ -46,6 +46,19 @@ export function CodedToday() {
     return <span>I genuinely love coding, but according to the Github API, I didn't contribute today. Sorry!</span>;
   }
 
+  if (totalToday === 1) {
+    return (
+      <span>
+        In fact, I've even made
+        <a href="https://github.com/SimonNRisk" target="_blank" rel="noopener noreferrer" className="underline">
+          {" "}
+          {totalToday} contribution today
+        </a>
+        ! according to the Github API!
+      </span>
+    );
+  }
+
   return (
     <span>
       In fact, I've even made{" "}
