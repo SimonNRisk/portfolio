@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { TimelineItem } from "./TimelineItem";
+import { useIsMobile } from "@/hooks/useIsMobile";
 
 interface TimelineData {
   title: string;
@@ -21,7 +22,7 @@ interface TimelineProps {
 
 export function Timeline({ data }: TimelineProps) {
   const [filterType, setFilterType] = useState<"professional" | "volunteer" | "education">("professional");
-
+  const isMobile = useIsMobile();
   const filteredData = data.filter((item) => item.type === filterType);
 
   return (
@@ -40,7 +41,7 @@ export function Timeline({ data }: TimelineProps) {
       </div>
 
       {/* Central line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-300"></div>
+      {!isMobile && <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-300"></div>}
 
       {/* Timeline items */}
       <div className="space-y-8">

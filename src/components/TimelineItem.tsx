@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { useIsMobile } from "@/hooks/useIsMobile";
+
 interface TimelineItemProps {
   title: string;
   company: string;
@@ -13,24 +15,29 @@ interface TimelineItemProps {
 
 export function TimelineItem({ title, company, companyUrl, details, year, image }: TimelineItemProps) {
   const [isExpanded, setIsExpanded] = useState(true);
-
+  const isMobile = useIsMobile();
+  console.log(isMobile);
   return (
     <div className="flex items-start justify-between">
       {/* Left side - Date */}
-      <div className="flex-1 flex justify-end pr-8">
-        <div className="text-right flex items-center" style={{ height: "48px", paddingTop: "16px" }}>
-          <div className="text-sm font-medium text-gray-500">{year}</div>
-        </div>
-      </div>
+      {!isMobile && (
+        <>
+          <div className="flex-1 flex justify-end pr-8">
+            <div className="text-right flex items-center" style={{ height: "48px", paddingTop: "16px" }}>
+              <div className="text-sm font-medium text-gray-500">{year}</div>
+            </div>
+          </div>
 
-      {/* Timeline dot */}
-      <div
-        className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"
-        style={{ marginTop: "16px" }}
-      ></div>
+          {/* Timeline dot */}
+          <div
+            className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"
+            style={{ marginTop: "16px" }}
+          ></div>
+        </>
+      )}
 
       {/* Right side - Company info */}
-      <div className="flex-1 pl-8">
+      <div className={`flex-1 ${isMobile ? "pl-0 flex justify-center" : "pl-8"}`}>
         <div
           className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 w-96 ${isExpanded ? "min-h-32" : "h-32"}`}
         >
