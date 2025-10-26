@@ -3,8 +3,10 @@ import { TimelineItem } from "./TimelineItem";
 interface TimelineData {
   title: string;
   company: string;
+  companyUrl: string;
   details: string;
   year: string;
+  image: string;
   startDate: string;
   endDate: string;
 }
@@ -22,7 +24,15 @@ export function Timeline({ data }: TimelineProps) {
       {/* Timeline items */}
       <div className="space-y-8">
         {data.map((item, index) => (
-          <TimelineItem key={index} title={item.title} company={item.company} details={item.details} year={item.year} />
+          <TimelineItem
+            key={index}
+            title={item.title}
+            company={item.company}
+            companyUrl={item.companyUrl}
+            details={item.details}
+            year={item.year}
+            image={item.image}
+          />
         ))}
       </div>
     </div>

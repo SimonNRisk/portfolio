@@ -5,11 +5,13 @@ import { useState } from "react";
 interface TimelineItemProps {
   title: string;
   company: string;
+  companyUrl: string;
   details: string;
   year: string;
+  image: string;
 }
 
-export function TimelineItem({ title, company, details, year }: TimelineItemProps) {
+export function TimelineItem({ title, company, companyUrl, details, year, image }: TimelineItemProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -35,15 +37,8 @@ export function TimelineItem({ title, company, details, year }: TimelineItemProp
           <div className="p-4 flex flex-col">
             {/* Always visible: Icon + Title */}
             <div className="flex items-center mb-3">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-3 flex-shrink-0">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                  />
-                </svg>
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-3 flex-shrink-0 border border-gray-200">
+                <img src={image} alt={`${company} logo`} className="w-8 h-8 object-contain" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 truncate">{title}</h3>
             </div>
@@ -51,7 +46,14 @@ export function TimelineItem({ title, company, details, year }: TimelineItemProp
             {/* Expandable content */}
             {isExpanded && (
               <div className="space-y-2 mb-3">
-                <div className="text-sm font-medium text-blue-600">{company}</div>
+                <a
+                  href={companyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium text-blue-600"
+                >
+                  {company}
+                </a>
                 <div className="text-gray-600 text-sm leading-relaxed">{details}</div>
               </div>
             )}
