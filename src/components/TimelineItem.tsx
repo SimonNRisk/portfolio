@@ -12,7 +12,7 @@ interface TimelineItemProps {
 }
 
 export function TimelineItem({ title, company, companyUrl, details, year, image }: TimelineItemProps) {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   return (
     <div className="flex items-start justify-between">
