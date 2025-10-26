@@ -6,7 +6,7 @@ export function CodedToday() {
   const [totalToday, setTotalToday] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-
+  const [contributedToday, setContributedToday] = useState(false);
   useEffect(() => {
     async function getCodedToday() {
       try {
@@ -17,6 +17,7 @@ export function CodedToday() {
           setError(data.error);
         } else {
           setTotalToday(data.totalToday);
+          setContributedToday(data.contributedToday);
         }
       } catch {
         setError("Failed to fetch data");
@@ -39,6 +40,10 @@ export function CodedToday() {
         I got an error: {error}
       </span>
     );
+  }
+
+  if (!contributedToday) {
+    return <span>I genuinely love coding, but according to the Github API, I didn't contribute today. Sorry!</span>;
   }
 
   return (
