@@ -21,9 +21,20 @@ export default [
     },
   },
   {
-    files: ["**/*.config.{js,mjs,ts}"],
+    files: ["**/*.config.{js,mjs,ts}", "**/next.config.*", "**/tailwind.config.*", "**/postcss.config.*"],
+    languageOptions: {
+      globals: {
+        module: "readonly",
+        require: "readonly",
+        process: "readonly",
+        __dirname: "readonly",
+        __filename: "readonly",
+      },
+    },
     rules: {
       "@typescript-eslint/no-var-requires": "off",
+      "@typescript-eslint/no-require-imports": "off",
+      "no-undef": "off",
     },
   },
   {

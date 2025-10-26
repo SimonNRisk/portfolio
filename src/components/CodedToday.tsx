@@ -18,8 +18,7 @@ export function CodedToday() {
         } else {
           setTotalToday(data.totalToday);
         }
-      } catch (error) {
-        console.error("Failed to fetch coding data:", error);
+      } catch {
         setError("Failed to fetch data");
       } finally {
         setLoading(false);
