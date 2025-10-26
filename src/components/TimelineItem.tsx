@@ -64,7 +64,7 @@ export function TimelineItem({ title, company, companyUrl, details, year, image 
                 onClick={() => setIsExpanded(!isExpanded)}
                 className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors duration-200"
               >
-                {isExpanded ? "Show Less" : "Learn More"}
+                {isExpanded ? "Show Less" : `${company}`}
               </button>
             </div>
           </div>
