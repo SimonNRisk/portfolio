@@ -18,12 +18,12 @@ import { getSortedTimelineData } from "@/data/timelineData";
 export default function Home() {
   const projects = [
     {
-      title: "OpenAI Sales Email Chrome Extension",
+      title: "LinkedIn Content Generation & Analytics Platform",
       description:
-        "A sleek Gmail Chrome extension that drafts personalized sales emails using OpenAI, Clearbit, and RAG-enhanced templates-designed with a clean UI and deployed to 40+ users",
-      imageUrl: "/images/cold_email.jpg",
-      technologies: ["Chrome Extension", "OpenAI API", "Clearbit API", "RAG", "TypeScript"],
-      projectUrl: "https://github.com/SimonNRisk/automating_sales_emails",
+        "A full-stack platform for generating, scheduling, and analyzing LinkedIn content. Built with Next.js frontend and FastAPI backend, featuring real-time API communication, OpenAI integration, and LinkedIn OAuth authentication.",
+      imageUrl: "/images/astro.png",
+      technologies: ["Next.js", "FastAPI", "TypeScript", "Python", "OpenAI API", "LinkedIn OAuth"],
+      projectUrl: "https://github.com/SimonNRisk/qtma25",
     },
     {
       title: "Accountability Buddy",
@@ -133,7 +133,7 @@ export default function Home() {
           {/* Timeline Section */}
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="text-center mb-12">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">My Journey</h3>
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">My Life</h3>
               <p className="text-gray-600 text-lg">A timeline of my professional and personal experiences</p>
             </div>
             <Timeline data={getSortedTimelineData()} />
@@ -141,7 +141,7 @@ export default function Home() {
         </section>
 
         {/* Donut Section */}
-        <section className="py-12 px-4">
+        <section className="py-6 px-4">
           <div className="flex flex-col items-center">
             <AsciiDonut />
             <div className="flex items-center gap-1 text-sm text-gray-600 mt-2 animate-bounce">
@@ -152,15 +152,12 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-24 px-4">
+        <section id="projects" className="py-12 px-4">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-6 text-center text-gray-900 tracking-tight">Featured Projects</h2>
-            <p className="text-gray-600 text-center mb-4 max-w-2xl mx-auto leading-relaxed text-lg">
-              Here are some of my recent projects that showcase my skills and experience building cool stuff with
-              software.
-            </p>
-            <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto leading-relaxed text-lg font-semibold">
-              Click on them to see the deployed projects, a demo video, or the github repo
+            <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto leading-relaxed text-lg">
+              Hover to access the github repo (where there's usually a demo video) or click on the links to see the
+              deployed projects
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">

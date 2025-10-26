@@ -93,6 +93,18 @@ export const timelineData: TimelineData[] = [
     endDate: "2027-04-01",
     type: "education",
   },
+  {
+    title: "High School Student",
+    company: "Kingston Collegiate & Vocational Institute",
+    companyUrl: "https://en.wikipedia.org/wiki/Kingston_Collegiate_and_Vocational_Institute",
+    details:
+      "I attended the oldest secondary school in Canada (pretty cool) in Kingston, Ontario. I did IB certificate with HLs in Math, Physics, and Chemistry.",
+    year: "2019-2023",
+    image: "/images/companies/kcvi.png",
+    startDate: "2019-09-01",
+    endDate: "2023-06-01",
+    type: "education",
+  },
 ];
 
 // Function to sort timeline data chronologically
