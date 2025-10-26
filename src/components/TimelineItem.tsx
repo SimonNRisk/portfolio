@@ -16,7 +16,7 @@ interface TimelineItemProps {
 export function TimelineItem({ title, company, companyUrl, details, year, image }: TimelineItemProps) {
   const [isExpanded, setIsExpanded] = useState(true);
   const isMobile = useIsMobile();
-  console.log(isMobile);
+
   return (
     <div className="flex items-start justify-between">
       {/* Left side - Date */}
