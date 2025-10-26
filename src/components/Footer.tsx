@@ -102,7 +102,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-center text-gray-600 dark:text-gray-300">
-            © {new Date().getFullYear()} Simon Risk. All rights reserved.
+            © {new Date().getFullYear()} Simon Risk. All rights reserved. I think. IDK. I'm not a lawyer.
           </p>
         </div>
       </div>
