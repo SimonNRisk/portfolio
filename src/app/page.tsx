@@ -31,7 +31,8 @@ export default function Home() {
         "To help keep myself productive, I built a website with Typescript, Next.js, and Firebase, that shows the live status of my daily checklist (resetting daily via a cron job). Friends can sign up with their email and recieve emails when I fail to get my stuff done on-time.",
       imageUrl: "/images/acc.png",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Cron jobs", "Sendgrid", "Firebase"],
-      projectUrl: "https://accountability-buddy-opal.vercel.app/",
+      projectUrl: "https://github.com/SimonNRisk/accountability-buddy",
+      deployedUrl: "https://accountability-buddy-opal.vercel.app/",
     },
     {
       title: "Music Genre Classifier",
@@ -151,7 +152,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-32 px-4">
+        <section id="projects" className="py-24 px-4">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-6 text-center text-gray-900 tracking-tight">Featured Projects</h2>
             <p className="text-gray-600 text-center mb-4 max-w-2xl mx-auto leading-relaxed text-lg">
