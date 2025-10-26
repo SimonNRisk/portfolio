@@ -83,10 +83,10 @@ export const timelineData: TimelineData[] = [
     type: "volunteer",
   },
   {
-    title: "Applied Mathematics & Engineering Student",
+    title: "Applied Math & Engineering",
     company: "Queen's University",
     companyUrl: "https://www.queensu.ca/",
-    details: "I'm currently an Applied Mathematics & Engineering student at Queen's University.",
+    details: "I'm currently a third-year Applied Mathematics & Engineering student at Queen's University.",
     year: "2023-2027",
     image: "/images/companies/queens.png",
     startDate: "2023-09-01",
