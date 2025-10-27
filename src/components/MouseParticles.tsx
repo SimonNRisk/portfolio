@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 interface Particle {
   x: number;
@@ -15,6 +15,7 @@ interface Particle {
 
 export default function MouseParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const createParticle = (x: number, y: number) => {
     const newParticle: Particle = {
@@ -38,12 +39,22 @@ export default function MouseParticles() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
+      if (!containerRef.current) return;
+
+      const containerRect = containerRef.current.getBoundingClientRect();
       const x = e.clientX;
       const y = e.clientY;
 
-      // Create multiple particles at once for a better effect
-      for (let i = 0; i < 3; i++) {
-        createParticle(x, y);
+      // Only create particles if mouse is within the hero section bounds
+      if (x >= containerRect.left && x <= containerRect.right && y >= containerRect.top && y <= containerRect.bottom) {
+        // Convert global coordinates to relative coordinates within the container
+        const relativeX = x - containerRect.left;
+        const relativeY = y - containerRect.top;
+
+        // Create multiple particles at once for a better effect
+        for (let i = 0; i < 3; i++) {
+          createParticle(relativeX, relativeY);
+        }
       }
     };
 
@@ -73,7 +84,7 @@ export default function MouseParticles() {
   }, [particles.length]);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[9999]">
+    <div ref={containerRef} className="absolute inset-0 pointer-events-none z-10">
       {particles.map((particle, index) => (
         <div
           key={index}
