@@ -11,22 +11,25 @@ interface Particle {
   opacity: number;
   life: number;
   rotation: number;
+  image: string;
 }
 
 export default function MouseParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
+  const lastMousePosition = useRef<{ x: number; y: number } | null>(null);
 
   const createParticle = (x: number, y: number) => {
     const newParticle: Particle = {
       x,
       y,
-      size: Math.random() * 2 + 2, // Larger size (2-4px)
+      size: Math.random() * 20 + 20,
       speedX: (Math.random() - 0.5) * 2, // Slower horizontal movement
       speedY: (Math.random() - 0.5) * 2, // Slower vertical movement
       opacity: 0.8,
       life: 60, // Longer life (1 second at 60fps)
       rotation: Math.random() * 360, // Random initial rotation
+      image: "/images/simon/simon_nobg.png", // Single image
     };
 
     setParticles((prevParticles) => {
@@ -51,9 +54,21 @@ export default function MouseParticles() {
         const relativeX = x - containerRect.left;
         const relativeY = y - containerRect.top;
 
-        // Create multiple particles at once for a better effect
-        for (let i = 0; i < 3; i++) {
+        // Only create particle if mouse has moved a noticeable distance
+        const minDistance = 60; // Minimum pixels to move before creating new particle
+        if (lastMousePosition.current) {
+          const distance = Math.sqrt(
+            Math.pow(relativeX - lastMousePosition.current.x, 2) + Math.pow(relativeY - lastMousePosition.current.y, 2)
+          );
+
+          if (distance >= minDistance) {
+            createParticle(relativeX, relativeY);
+            lastMousePosition.current = { x: relativeX, y: relativeY };
+          }
+        } else {
+          // Create first particle
           createParticle(relativeX, relativeY);
+          lastMousePosition.current = { x: relativeX, y: relativeY };
         }
       }
     };
@@ -88,7 +103,7 @@ export default function MouseParticles() {
       {particles.map((particle, index) => (
         <div
           key={index}
-          className="absolute w-0 h-0"
+          className="absolute"
           style={{
             left: `${particle.x}px`,
             top: `${particle.y}px`,
@@ -96,14 +111,14 @@ export default function MouseParticles() {
             opacity: particle.opacity,
           }}
         >
-          <div
-            className="w-full h-full"
+          <img
+            src={particle.image}
+            alt="particle"
+            className="rounded-lg"
             style={{
-              width: 0,
-              height: 0,
-              borderLeft: `${particle.size}px solid transparent`,
-              borderRight: `${particle.size}px solid transparent`,
-              borderBottom: `${particle.size * 1.5}px solid black`,
+              width: `${particle.size}px`,
+              height: `${particle.size}px`,
+              objectFit: "cover",
             }}
           />
         </div>
