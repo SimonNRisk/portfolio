@@ -97,13 +97,14 @@ export default function Home() {
       <div className="fixed inset-0 pointer-events-none z-0">
         <ParticleBackground />
       </div>
-      <MouseParticles />
+
       <div className="relative z-10">
         <Navbar />
 
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center text-center px-4">
-          <div className="max-w-4xl mx-auto">
+          <MouseParticles />
+          <div className="max-w-4xl mx-auto relative z-20">
             <h1 className="text-5xl md:text-7xl font-bold mb-8 text-gray-900 tracking-tight leading-tight">
               <AnimatedText text="Hello, I'm Simon" />
             </h1>
