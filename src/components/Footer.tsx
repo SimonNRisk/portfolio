@@ -11,7 +11,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">About Me</h3>
             <p className="text-gray-600 dark:text-gray-300">
-              An engineering student who's all about startups and building tech for good.
+              An engineering student who&apos;s all about startups and building tech for good.
             </p>
           </div>
 
@@ -89,7 +89,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-center text-gray-600 dark:text-gray-300">
-            © {new Date().getFullYear()} Simon Risk. All rights reserved. I think. IDK. I'm not a lawyer.
+            © {new Date().getFullYear()} Simon Risk. All rights reserved. I think. IDK. I&apos;m not a lawyer.
           </p>
         </div>
       </div>

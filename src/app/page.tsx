@@ -124,9 +124,9 @@ export default function Home() {
             <SimonPhotoButton />
             <h2 className="text-5xl font-bold mb-6 text-gray-900">About Me</h2>
             <p className="text-gray-600 dark:text-gray-600 text-lg leading-relaxed mb-12">
-              I'm currently an Applied Mathematics & Engineering student at Queen's University, specializing in Computer
-              Engineering. I really like software, and I'm really passionate about my work doing something good for the
-              world - whatever that may be.
+              I&apos;m currently an Applied Mathematics & Engineering student at Queen&apos;s University, specializing
+              in Computer Engineering. I really like software, and I&apos;m really passionate about my work doing
+              something good for the world - whatever that may be.
             </p>
           </div>
 
@@ -156,7 +156,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold mb-6 text-center text-gray-900 tracking-tight">Featured Projects</h2>
             <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto leading-relaxed text-lg">
-              Hover to access the github repo (where there's usually a demo video) or click on the links to see the
+              Hover to access the github repo (where there&apos;s usually a demo video) or click on the links to see the
               deployed projects
             </p>
 
@@ -187,10 +187,10 @@ export default function Home() {
         {/* Contact Section */}
         <section id="contact" className="py-32 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 tracking-tight">Let's Work Together</h2>
+            <h2 className="text-4xl font-bold mb-6 text-gray-900 tracking-tight">Let&apos;s Work Together</h2>
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              I'm always interested in hearing about new projects and opportunities. Let's work together to create
-              something amazing!
+              I&apos;m always interested in hearing about new projects and opportunities. Let&apos;s work together to
+              create something amazing!
             </p>
             <div className="flex justify-center space-x-6">
               <a

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 import { useIsMobile } from "@/hooks/useIsMobile";
 
@@ -45,7 +46,7 @@ export function TimelineItem({ title, company, companyUrl, details, year, image 
             {/* Always visible: Icon + Title */}
             <div className="flex items-center mb-3">
               <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mr-3 flex-shrink-0 border border-gray-200">
-                <img src={image} alt={`${company} logo`} className="w-8 h-8 object-contain" />
+                <Image src={image} alt={`${company} logo`} width={32} height={32} className="w-8 h-8 object-contain" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 truncate">{title}</h3>
             </div>

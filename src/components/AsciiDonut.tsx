@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 
 export default function AsciiDonut() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,7 +16,9 @@ export default function AsciiDonut() {
     return ((angle % TWO_PI) + TWO_PI) % TWO_PI;
   };
 
-  const renderDonut = () => {
+  const renderDonutRef = useRef<() => void>();
+
+  const renderDonut = useCallback(() => {
     // 🔄 Smooth idle animation
     if (!isDragging.current) {
       rotation.current.y += 0.007; // Y-axis (spin)
@@ -69,8 +71,12 @@ export default function AsciiDonut() {
     }
 
     setFrame(text);
-    animationRef.current = requestAnimationFrame(renderDonut);
-  };
+    animationRef.current = requestAnimationFrame(renderDonutRef.current!);
+  }, []);
+
+  useEffect(() => {
+    renderDonutRef.current = renderDonut;
+  }, [renderDonut]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     isDragging.current = true;
@@ -99,7 +105,7 @@ export default function AsciiDonut() {
     return () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
-  }, []);
+  }, [renderDonut]);
 
   return (
     <div

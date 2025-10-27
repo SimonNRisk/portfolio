@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export function SimonPhotoButton() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -19,9 +20,11 @@ export function SimonPhotoButton() {
   };
   return (
     <button onClick={handleClick} onMouseEnter={handleHover}>
-      <img
+      <Image
         src={images[currentImageIndex]}
         alt="Simon"
+        width={192}
+        height={192}
         className="mx-auto mb-6 w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-md"
       />
     </button>
