@@ -5,8 +5,11 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portfolio Website",
-  description: "A beautiful portfolio website built with Next.js and Tailwind CSS",
+  title: "Simon's Portfolio",
+  description: "Simon's portfolio website built with Next.js and Tailwind CSS",
+  icons: {
+    icon: "/images/simon/simon.jpg",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
