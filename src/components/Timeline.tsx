@@ -26,7 +26,7 @@ export function Timeline({ data }: TimelineProps) {
   const filteredData = data.filter((item) => item.type === filterType);
 
   return (
-    <div className="relative max-w-6xl mx-auto">
+    <div className="relative max-w-6xl mx-auto my-4">
       {/* Filter dropdown */}
       <div className="mb-8 flex justify-center">
         <select
