@@ -12,6 +12,13 @@ export function SimonPhotoButton() {
     "/images/simon/simon-toothless.jpg",
     "/images/simon/simon.jpg",
   ];
+  const alts = [
+    "Photo of Simon Risk with head tilted",
+    "Photo of Simon Risk laughing",
+    "Photo of Simon Risk looking thoughtful",
+    "Photo of Simon Risk smiling without showing teeth",
+    "Photo of Simon Risk",
+  ];
   const handleClick = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
@@ -22,7 +29,7 @@ export function SimonPhotoButton() {
     <button onClick={handleClick} onMouseEnter={handleHover}>
       <Image
         src={images[currentImageIndex]}
-        alt="Simon"
+        alt={alts[currentImageIndex]}
         width={192}
         height={192}
         className="mx-auto mb-6 w-40 h-40 md:w-48 md:h-48 rounded-full object-cover shadow-md"

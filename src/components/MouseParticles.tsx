@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
+import Image from "next/image";
 
 interface Particle {
   x: number;
@@ -12,6 +13,7 @@ interface Particle {
   life: number;
   rotation: number;
   image: string;
+  alt: string;
 }
 
 export default function MouseParticles() {
@@ -30,6 +32,7 @@ export default function MouseParticles() {
       life: 60, // Longer life (1 second at 60fps)
       rotation: Math.random() * 360, // Random initial rotation
       image: "/images/simon/simon_nobg.png", // Single image
+      alt: "Photo of Simon Risk without a background",
     };
 
     setParticles((prevParticles) => {
@@ -111,15 +114,12 @@ export default function MouseParticles() {
             opacity: particle.opacity,
           }}
         >
-          <img
+          <Image
             src={particle.image}
-            alt="particle"
-            className="rounded-lg"
-            style={{
-              width: `${particle.size}px`,
-              height: `${particle.size}px`,
-              objectFit: "cover",
-            }}
+            alt={particle.alt}
+            className="rounded-lg object-cover"
+            width={particle.size}
+            height={particle.size}
           />
         </div>
       ))}
