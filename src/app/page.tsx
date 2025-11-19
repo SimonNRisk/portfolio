@@ -24,6 +24,7 @@ export default function Home() {
       imageUrl: "/images/astro.png",
       technologies: ["Next.js", "FastAPI", "TypeScript", "Python", "OpenAI API", "LinkedIn OAuth"],
       projectUrl: "https://github.com/SimonNRisk/qtma25",
+      deployedUrl: "https://qtma25.vercel.app/",
     },
     {
       title: "Accountability Buddy",
