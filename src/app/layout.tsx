@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ChatButton from "@/components/ChatButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -77,6 +78,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         {children}
+
+        <ChatButton />
+
+        <script src="https://cdn.botpress.cloud/webchat/v3.4/inject.js"></script>
+        <script src="https://files.bpcontent.cloud/2025/10/30/13/20251030135514-YAT1ZMR2.js" defer></script>
       </body>
     </html>
   );

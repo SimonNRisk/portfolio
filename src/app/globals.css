@@ -58,3 +58,33 @@ body {
 .animate-bounce-5-times {
   animation: bounce-5-times 10s ease-in-out;
 }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+}
+
+.animate-fade-out {
+  animation: fade-out 0.3s ease-in;
+}
