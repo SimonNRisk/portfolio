@@ -1,5 +1,5 @@
 import SkillCard from "@/components/SkillCard";
-import { Skills } from "@/data/skillsData";
+import { Skills } from "@/data/SkillsData";
 import { CodedToday } from "@/components/CodedToday";
 
 export default function SkillsSection() {
