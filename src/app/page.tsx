@@ -11,6 +11,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
 import { TriviaBlob } from "@/components/TriviaBlob";
+import { Trivia } from "@/components/Trivia";
 
 export default function Home() {
   const [clickedTrivia, setClickedTrivia] = useState(false);
@@ -29,7 +30,8 @@ export default function Home() {
         <ProjectsSection />
         <SkillsSection />
         <ContactSection />
-        {!clickedTrivia && <TriviaBlob />}
+        {!clickedTrivia && <TriviaBlob onClick={() => setClickedTrivia(true)} />}
+        {clickedTrivia && <Trivia onClose={() => setClickedTrivia(false)} />}
         <Footer />
       </div>
     </main>
