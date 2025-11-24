@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
 
 import { triviaQuestions } from "@/data/triviaData";
 import { TriviaOptions } from "@/components/TriviaOptions";
@@ -23,7 +24,13 @@ export const Trivia = ({ onClose }: { onClose: () => void }) => {
           <h2 className="text-black text-lg font-bold mb-4">
             You scored {currentScore} out of {triviaQuestions.length}
           </h2>
-          <button onClick={onClose}>Close</button>
+          <button
+            className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors"
+            onClick={onClose}
+          >
+            <FaTimes className="w-4 h-4" />
+            Close
+          </button>
         </div>
       </div>
     );
@@ -31,10 +38,15 @@ export const Trivia = ({ onClose }: { onClose: () => void }) => {
   return (
     <div className="fixed inset-0 bg-black/40 backdrop-blur-md z-50">
       <div className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-96 p-6 bg-white rounded-xl shadow-xl z-50">
+        <button
+          className="absolute top-2 right-2 p-2 text-black hover:bg-gray-100 rounded-full transition-colors"
+          onClick={onClose}
+        >
+          <FaTimes className="w-5 h-5" />
+        </button>
         <h1 className="text-black text-2xl font-bold mb-4">Simon's Trivia</h1>
         <h2 className="text-black text-lg font-bold mb-4">{currentQuestion.question}</h2>
         <TriviaOptions options={currentQuestion.options} handleOptionClick={handleOptionClick} />
-        <button onClick={onClose}>Close</button>
       </div>
     </div>
   );

@@ -16,9 +16,9 @@ export const triviaQuestions: TriviaQuestion[] = [
     options: ["Ottawa", "Kingston", "Toronto", "Dublin"],
   },
   {
-    question: "What is my favourite food?",
-    answer: "Tres Leches",
-    options: ["Sushi", "Tres Leches", "Baklava", "Peking Duck"],
+    question: "What is my second favourite food?",
+    answer: "Eggs",
+    options: ["Tres Leches", "Sushi", "Eggs", "Baklava"],
   },
   {
     question: "What is my dog's name?",
