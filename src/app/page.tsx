@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ParticleBackground from "@/components/ParticleBackground";
@@ -14,8 +14,10 @@ import { ScrollArrow } from "@/components/ScrollArrow";
 import { CodedToday } from "@/components/CodedToday";
 import { Timeline } from "@/components/Timeline";
 import { getSortedTimelineData } from "@/data/timelineData";
+import { TriviaBlob } from "@/components/TriviaBlob";
 
 export default function Home() {
+  const [clickedTrivia, setClickedTrivia] = useState(false);
   const projects = [
     {
       title: "LinkedIn Content Generation & Analytics Platform",
@@ -212,6 +214,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {!clickedTrivia && <TriviaBlob />}
 
         <Footer />
       </div>
