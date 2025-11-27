@@ -67,15 +67,6 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                   Skills
                 </a>
               </li>
-              <li>
-                <a
-                  href="#contact"
-                  className="block text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 py-2 transition-colors"
-                  onClick={onClose}
-                >
-                  Contact
-                </a>
-              </li>
             </ul>
           </nav>
         </div>

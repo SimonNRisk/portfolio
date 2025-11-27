@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -74,6 +74,13 @@ export default function Footer() {
               >
                 <span className="sr-only">Instagram</span>
                 <FaInstagram className="h-6 w-6" />
+              </a>
+              <a
+                href="mailto:risk.simon@queensu.ca?subject=Your website is the coolest thing I've ever seen!"
+                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
+              >
+                <span className="sr-only">Email</span>
+                <FaEnvelope className="h-6 w-6" />
               </a>
             </div>
           </div>
