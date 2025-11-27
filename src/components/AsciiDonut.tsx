@@ -114,7 +114,7 @@ export default function AsciiDonut() {
       onMouseMove={handleMouseMove}
       onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseUp}
-      className="w-[420px] h-[420px] p-4 rounded-2xl bg-transparent backdrop-blur-md shadow-none border-none flex items-center justify-center select-none cursor-grab active:cursor-grabbing"
+      className="my-4 cursor-grab active:cursor-grabbing"
     >
       <pre className="text-[10px] leading-[10px] font-mono text-black select-none">{frame}</pre>
     </div>
