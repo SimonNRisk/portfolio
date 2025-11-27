@@ -10,6 +10,7 @@ interface ProjectCardProps {
   imageUrl: string;
   technologies: string[];
   projectUrl: string;
+  date: string;
   deployedUrl?: string; // Optional deployed URL
 }
 
@@ -19,6 +20,7 @@ export default function ProjectCard({
   imageUrl,
   technologies,
   projectUrl,
+  date,
   deployedUrl,
 }: ProjectCardProps) {
   return (
@@ -47,7 +49,7 @@ export default function ProjectCard({
             href={deployedUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-blue-600 hover:text-blue-800 hover:underline mb-3 block"
+            className="text-sm text-blue-600 hover:text-blue-800 hover:underline block"
           >
             {deployedUrl}
           </a>
@@ -60,6 +62,7 @@ export default function ProjectCard({
             </span>
           ))}
         </div>
+        <p className="text-black text-sm italic leading-relaxed mt-2">{date}</p>
       </div>
     </div>
   );

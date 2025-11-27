@@ -1,5 +1,6 @@
 import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data/projectsData";
+import { CodedToday } from "@/components/CodedToday";
 
 export default function ProjectsSection() {
   return (
@@ -8,7 +9,7 @@ export default function ProjectsSection() {
         <h2 className="text-4xl font-bold mb-6 text-center text-gray-900 tracking-tight">Featured Projects</h2>
         <p className="text-gray-600 text-center mb-16 max-w-2xl mx-auto leading-relaxed text-lg">
           Hover to access the github repo (where there&apos;s usually a demo video) or click on the links to see the
-          deployed projects
+          deployed projects. I like to build fun stuff all the time - <CodedToday />
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">

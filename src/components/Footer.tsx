@@ -36,14 +36,6 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#skills"
-                  className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors border-b-2 border-transparent hover:border-gray-900 dark:hover:border-white inline-block"
-                >
-                  Skills
-                </a>
-              </li>
-              <li>
-                <a
                   href="#contact"
                   className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors border-b-2 border-transparent hover:border-gray-900 dark:hover:border-white inline-block"
                 >

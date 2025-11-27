@@ -36,9 +36,6 @@ export default function Navbar() {
             <Link href="#projects" className="text-gray-600 hover:text-gray-900 transition-colors">
               Projects
             </Link>
-            <Link href="#skills" className="text-gray-600 hover:text-gray-900 transition-colors">
-              Skills
-            </Link>
             <Link href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">
               Contact
             </Link>
@@ -78,13 +75,6 @@ export default function Navbar() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Projects
-              </Link>
-              <Link
-                href="#skills"
-                className="text-gray-600 hover:text-gray-900 transition-colors"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Skills
               </Link>
               <Link
                 href="#contact"
