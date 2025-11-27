@@ -36,22 +36,20 @@ export function CodedToday() {
   if (error) {
     return (
       <span className="text-red-600">
-        But, I clearly haven&apos;t coded enough. This is supposed to tell you how many contributions I&apos;ve made
+        but, I clearly haven&apos;t coded enough. This is supposed to tell you how many contributions I&apos;ve made
         today, but I got an error: {error}
       </span>
     );
   }
 
   if (!contributedToday) {
-    return (
-      <span>I genuinely love coding, but according to the Github API, I didn&apos;t contribute today. Sorry!</span>
-    );
+    return <span> but I guess not today. According to the Github API, I didn&apos;t contribute today. Sorry!</span>;
   }
 
   if (totalToday === 1) {
     return (
       <span>
-        In fact, I&apos;ve even made
+        in fact, I&apos;ve even made
         <a href="https://github.com/SimonNRisk" target="_blank" rel="noopener noreferrer" className="underline">
           {" "}
           {totalToday} contribution today
@@ -63,7 +61,7 @@ export function CodedToday() {
 
   return (
     <span>
-      In fact, I&apos;ve even made{" "}
+      in fact, I&apos;ve even made{" "}
       <a href="https://github.com/SimonNRisk" target="_blank" rel="noopener noreferrer" className="underline">
         {totalToday} contributions today
       </a>
