@@ -16,7 +16,7 @@ export default function Home() {
   const [clickedTrivia, setClickedTrivia] = useState(false);
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white overflow-x-hidden">
       <div className="fixed inset-0 pointer-events-none z-0">
         <ParticleBackground />
       </div>
