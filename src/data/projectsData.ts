@@ -18,6 +18,15 @@ export const projects: Project[] = [
     deployedUrl: "https://qtma25.vercel.app/",
   },
   {
+    title: "Monkle - A Wordle-Inspired Monkey Guessing Game",
+    description:
+      "A simple monkey guessing game inspired by Wordle with more than 10 daily players! Built with Next.js and Supabase with public (get the daily puzzle) and private (set the daily puzzle) endpoints. Learned about monkeys to write monkey hints and get monkey data.",
+    imageUrl: "/images/monkle.png",
+    technologies: ["Next.js", "Supabase", "Tailwind CSS", "Vercel", "TypeScript", "PostgreSQL"],
+    projectUrl: "https://github.com/SimonNRisk/monkey-wordle",
+    deployedUrl: "https://monkey-wordle.vercel.app/",
+  },
+  {
     title: "Accountability Buddy",
     description:
       "To help keep myself productive, I built a website with Typescript, Next.js, and Firebase, that shows the live status of my daily checklist (resetting daily via a cron job). Friends can sign up with their email and recieve emails when I fail to get my stuff done on-time.",
