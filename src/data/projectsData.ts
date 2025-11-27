@@ -4,6 +4,7 @@ export interface Project {
   imageUrl: string;
   technologies: string[];
   projectUrl: string;
+  date: string;
   deployedUrl?: string;
 }
 
@@ -16,6 +17,7 @@ export const projects: Project[] = [
     technologies: ["Next.js", "FastAPI", "TypeScript", "Python", "OpenAI API", "LinkedIn OAuth"],
     projectUrl: "https://github.com/SimonNRisk/qtma25",
     deployedUrl: "https://qtma25.vercel.app/",
+    date: "Sep 2025 - Present",
   },
   {
     title: "Monkle - A Wordle-Inspired Monkey Guessing Game",
@@ -25,6 +27,7 @@ export const projects: Project[] = [
     technologies: ["Next.js", "Supabase", "Tailwind CSS", "Vercel", "TypeScript", "PostgreSQL"],
     projectUrl: "https://github.com/SimonNRisk/monkey-wordle",
     deployedUrl: "https://monkey-wordle.vercel.app/",
+    date: "Nov 2025",
   },
   {
     title: "Accountability Buddy",
@@ -34,6 +37,7 @@ export const projects: Project[] = [
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Cron jobs", "Sendgrid", "Firebase"],
     projectUrl: "https://github.com/SimonNRisk/accountability-buddy",
     deployedUrl: "https://accountability-buddy-opal.vercel.app/",
+    date: "Aug 2025",
   },
   {
     title: "Music Genre Classifier",
@@ -42,5 +46,6 @@ export const projects: Project[] = [
     imageUrl: "/images/audio.jpg",
     technologies: ["SwiftUI", "RestAPI", "Geometry-Based Models", "Tree-Based Models"],
     projectUrl: "https://github.com/IsaiahIruoha/music-genre-detector-ios",
+    date: "Aug 2024",
   },
 ];
