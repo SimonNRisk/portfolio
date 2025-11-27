@@ -25,11 +25,11 @@ export default function Home() {
         <Navbar />
         <HeroSection />
         <AboutSection />
+        {!clickedTrivia && <TriviaBlob onClick={() => setClickedTrivia(true)} />}
+        {clickedTrivia && <Trivia onClose={() => setClickedTrivia(false)} />}
         <DonutSection />
         <ProjectsSection />
         <ContactSection />
-        {!clickedTrivia && <TriviaBlob onClick={() => setClickedTrivia(true)} />}
-        {clickedTrivia && <Trivia onClose={() => setClickedTrivia(false)} />}
         <Footer />
       </div>
     </main>
