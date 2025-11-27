@@ -40,7 +40,7 @@ export function TimelineItem({ title, company, companyUrl, details, year, image 
       {/* Right side - Company info */}
       <div className={`flex-1 ${isMobile ? "pl-0 flex justify-center" : "pl-8"}`}>
         <div
-          className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 w-96 ${isExpanded ? "min-h-32" : "h-32"}`}
+          className={`bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 ${isMobile ? "w-full" : "w-96"} ${isExpanded ? "min-h-32" : "h-32"}`}
         >
           <div className="p-4 flex flex-col">
             {/* Always visible: Icon + Title */}
