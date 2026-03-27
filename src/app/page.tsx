@@ -8,6 +8,8 @@ import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import DonutSection from "@/components/DonutSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import SkillsSection from "@/components/SkillsSection";
+import ContactSection from "@/components/ContactSection";
 import { TriviaBlob } from "@/components/TriviaBlob";
 import { Trivia } from "@/components/Trivia";
 
@@ -28,6 +30,8 @@ export default function Home() {
         {clickedTrivia && <Trivia onClose={() => setClickedTrivia(false)} />}
         <DonutSection />
         <ProjectsSection />
+        <SkillsSection />
+        <ContactSection />
         <Footer />
       </div>
     </main>
