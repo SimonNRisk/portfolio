@@ -3,7 +3,12 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-export function ScrollArrow() {
+type ScrollArrowProps = {
+  /** In-flow under hero content; default pins to bottom of the section */
+  inline?: boolean;
+};
+
+export function ScrollArrow({ inline = false }: ScrollArrowProps) {
   const [isVisible, setIsVisible] = useState(true);
   const router = useRouter();
 
@@ -19,9 +24,13 @@ export function ScrollArrow() {
     return () => clearTimeout(timer);
   }, []);
 
+  const positionClass = inline
+    ? "relative"
+    : "absolute bottom-8 left-1/2 transform -translate-x-1/2";
+
   return (
     <div
-      className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 transition-opacity duration-1000 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      className={`${positionClass} z-20 transition-opacity duration-1000 ${isVisible ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
       <button onClick={scrollToAbout} className="group cursor-pointer transition-all duration-300 hover:scale-110">
         <div className="animate-bounce-5-times">

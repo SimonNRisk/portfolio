@@ -15,10 +15,9 @@ export function SimonCaptchaPanel({ onVerified, onCaptchaFail }: SimonCaptchaPan
 
   const handleSubmit = () => {
     if (evaluateSubmit()) {
-      alert("Right — that is correct!");
       onVerified?.();
     } else {
-      alert("Wrong — try again.");
+      alert("Not quite - please try again.");
       onCaptchaFail?.();
     }
   };
