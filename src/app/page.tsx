@@ -12,9 +12,13 @@ import SkillsSection from "@/components/SkillsSection";
 import ContactSection from "@/components/ContactSection";
 import { TriviaBlob } from "@/components/TriviaBlob";
 import { Trivia } from "@/components/Trivia";
+import { ContactCaptchaModal } from "@/components/Captcha/ContactCaptchaModal";
 
 export default function Home() {
   const [clickedTrivia, setClickedTrivia] = useState(false);
+  const [contactClicked, setContactClicked] = useState(false);
+  const [contactVerified, setContactVerified] = useState(false);
+  const [showHumanOnlyHint, setShowHumanOnlyHint] = useState(false);
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
@@ -31,8 +35,22 @@ export default function Home() {
         <DonutSection />
         <ProjectsSection />
         <SkillsSection />
-        <ContactSection />
+        <ContactSection
+          contactVerified={contactVerified}
+          onContactClick={() => setContactClicked(true)}
+          showHumanOnlyHint={showHumanOnlyHint}
+        />
         <Footer />
+
+        <ContactCaptchaModal
+          open={contactClicked}
+          onClose={() => setContactClicked(false)}
+          onVerified={() => {
+            setContactVerified(true);
+            setContactClicked(false);
+          }}
+          onCaptchaFail={() => setShowHumanOnlyHint(true)}
+        />
       </div>
     </main>
   );
