@@ -13,12 +13,19 @@ import ContactSection from "@/components/ContactSection";
 import { TriviaBlob } from "@/components/TriviaBlob";
 import { Trivia } from "@/components/Trivia";
 import { ContactCaptchaModal } from "@/components/Captcha/ContactCaptchaModal";
+import { useContactReveal } from "@/hooks/useContactReveal";
 
 export default function Home() {
   const [clickedTrivia, setClickedTrivia] = useState(false);
-  const [contactClicked, setContactClicked] = useState(false);
-  const [contactVerified, setContactVerified] = useState(false);
-  const [showHumanOnlyHint, setShowHumanOnlyHint] = useState(false);
+  const {
+    contactClicked,
+    openContactModal,
+    closeContactModal,
+    revealedEmail,
+    showHumanOnlyHint,
+    handleContactVerified,
+    onCaptchaFail,
+  } = useContactReveal();
 
   return (
     <main className="min-h-screen bg-white overflow-x-hidden">
@@ -36,20 +43,17 @@ export default function Home() {
         <ProjectsSection />
         <SkillsSection />
         <ContactSection
-          contactVerified={contactVerified}
-          onContactClick={() => setContactClicked(true)}
+          revealedEmail={revealedEmail}
+          onContactClick={openContactModal}
           showHumanOnlyHint={showHumanOnlyHint}
         />
         <Footer />
 
         <ContactCaptchaModal
           open={contactClicked}
-          onClose={() => setContactClicked(false)}
-          onVerified={() => {
-            setContactVerified(true);
-            setContactClicked(false);
-          }}
-          onCaptchaFail={() => setShowHumanOnlyHint(true)}
+          onClose={closeContactModal}
+          onVerified={handleContactVerified}
+          onCaptchaFail={onCaptchaFail}
         />
       </div>
     </main>

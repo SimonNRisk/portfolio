@@ -6,16 +6,16 @@ import { CaptchaInstructionHeader } from "./CaptchaInstructionHeader";
 import { useCaptchaChallenge } from "./useCaptchaChallenge";
 
 type SimonCaptchaPanelProps = {
-  onVerified?: () => void;
+  onVerified?: () => void | Promise<void>;
   onCaptchaFail?: () => void;
 };
 
 export function SimonCaptchaPanel({ onVerified, onCaptchaFail }: SimonCaptchaPanelProps) {
   const { orderedTiles, selectedIds, toggle, newRound, evaluateSubmit } = useCaptchaChallenge();
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (evaluateSubmit()) {
-      onVerified?.();
+      await onVerified?.();
     } else {
       alert("Not quite - please try again.");
       onCaptchaFail?.();

@@ -6,7 +6,7 @@ import { SimonCaptchaPanel } from "./SimonCaptchaPanel";
 type ContactCaptchaModalProps = {
   open: boolean;
   onClose: () => void;
-  onVerified?: () => void;
+  onVerified?: () => void | Promise<void>;
   onCaptchaFail?: () => void;
 };
 
