@@ -9,7 +9,6 @@ import AboutSection from "@/components/AboutSection";
 import DonutSection from "@/components/DonutSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
-import ContactSection from "@/components/ContactSection";
 import { TriviaBlob } from "@/components/TriviaBlob";
 import { Trivia } from "@/components/Trivia";
 import { ContactCaptchaModal } from "@/components/Captcha/ContactCaptchaModal";
@@ -35,18 +34,13 @@ export default function Home() {
 
       <div className="relative z-10">
         <Navbar />
-        <HeroSection />
+        <HeroSection revealedEmail={revealedEmail ?? null} onContactClick={openContactModal} showHumanOnlyHint={showHumanOnlyHint} />
         <AboutSection />
         {!clickedTrivia && <TriviaBlob onClick={() => setClickedTrivia(true)} />}
         {clickedTrivia && <Trivia onClose={() => setClickedTrivia(false)} />}
         <DonutSection />
         <ProjectsSection />
         <SkillsSection />
-        <ContactSection
-          revealedEmail={revealedEmail}
-          onContactClick={openContactModal}
-          showHumanOnlyHint={showHumanOnlyHint}
-        />
         <Footer />
 
         <ContactCaptchaModal
