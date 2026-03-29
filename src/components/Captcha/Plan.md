@@ -1,2 +1,0 @@
-# High Level
-I want a CAPTCHA-like grid. User has to "Select all squares with Simon". Submit button on the bottom right. There are 9 square images arranged in a grid, some of me, some not. On correct submit, we call a backend API that serves my email. On fail, we re-shift the grid ask to try again. That means images get random order on every load.
