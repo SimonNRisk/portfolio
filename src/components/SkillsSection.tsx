@@ -30,7 +30,7 @@ const skills = [
       </svg>
     ),
     description:
-      "I've developed robust and scalable server-side apps and features with Ruby on Rails, Node.js, Express, and various databases.",
+      "I've developed scalable server-side apps and features with Ruby on Rails, Node.js, FastAPI, Flask, etc. I think distributed systems are super cool.",
   },
   {
     name: "AI/ML Research",
