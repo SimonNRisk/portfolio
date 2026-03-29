@@ -14,6 +14,17 @@ export const timelineData: TimelineData[] = [
   // Professional Experience Only
   {
     title: "Software Engineer Intern",
+    company: "Shopify",
+    companyUrl: "https://www.shopify.com/",
+    details: "Incoming Software Engineer Intern at Shopify (S26).",
+    year: "Incoming S26",
+    image: "/images/companies/super.com.png",
+    startDate: "2026-01-01",
+    endDate: "2026-05-01",
+    type: "professional",
+  },
+  {
+    title: "Software Engineer Intern",
     company: "Super.com",
     companyUrl: "https://www.super.com/",
     details: "Incoming Software Engineer Intern at Super.com (W26).",
