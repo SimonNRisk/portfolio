@@ -24,9 +24,7 @@ export function ScrollArrow({ inline = false }: ScrollArrowProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  const positionClass = inline
-    ? "relative"
-    : "absolute bottom-8 left-1/2 transform -translate-x-1/2";
+  const positionClass = inline ? "relative" : "absolute bottom-8 left-1/2 transform -translate-x-1/2";
 
   return (
     <div

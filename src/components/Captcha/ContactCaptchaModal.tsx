@@ -15,7 +15,7 @@ export function ContactCaptchaModal({ open, onClose, onVerified, onCaptchaFail }
     (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     },
-    [onClose],
+    [onClose]
   );
 
   useEffect(() => {
@@ -50,7 +50,15 @@ export function ContactCaptchaModal({ open, onClose, onVerified, onCaptchaFail }
           aria-label="Close verification dialog"
           className="absolute top-2 right-2 z-20 flex h-10 w-10 items-center justify-center rounded-md text-white hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.2} aria-hidden>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2.2}
+            aria-hidden
+          >
             <path strokeLinecap="round" d="M6 6l12 12M18 6L6 18" />
           </svg>
         </button>

@@ -26,11 +26,7 @@ export default function HeroSection({ revealedEmail, onContactClick, showHumanOn
         </p>
         <br />
         <p className="text-xl md:text-2xl text-gray-600 mb-12 font-light max-w-2xl mx-auto leading-relaxed">
-          <AnimatedText
-            text="Verify you're a human to get in touch!"
-            className="delay-1000"
-            speed={15}
-          />
+          <AnimatedText text="Verify you're a human to get in touch!" className="delay-1000" speed={15} />
         </p>
         <div className="flex flex-col items-center gap-3">
           <NotARobotContact

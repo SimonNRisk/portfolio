@@ -34,7 +34,11 @@ export default function Home() {
 
       <div className="relative z-10">
         <Navbar />
-        <HeroSection revealedEmail={revealedEmail ?? null} onContactClick={openContactModal} showHumanOnlyHint={showHumanOnlyHint} />
+        <HeroSection
+          revealedEmail={revealedEmail ?? null}
+          onContactClick={openContactModal}
+          showHumanOnlyHint={showHumanOnlyHint}
+        />
         <AboutSection />
         {!clickedTrivia && <TriviaBlob onClick={() => setClickedTrivia(true)} />}
         {clickedTrivia && <Trivia onClose={() => setClickedTrivia(false)} />}
