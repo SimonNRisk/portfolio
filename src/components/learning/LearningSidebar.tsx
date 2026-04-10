@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { LearningNavSection } from "./types";
 
@@ -9,6 +11,8 @@ type LearningNavTreeProps = {
 };
 
 function LearningNavTree({ sections, onNavigate }: LearningNavTreeProps) {
+  const pathname = usePathname();
+
   return (
     <nav aria-label="Learning topics" className="space-y-8">
       {sections.map((section) => (
@@ -17,17 +21,26 @@ function LearningNavTree({ sections, onNavigate }: LearningNavTreeProps) {
             {section.title}
           </p>
           <ul className="space-y-0.5 border-l border-gray-200">
-            {section.items.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  onClick={() => onNavigate?.()}
-                  className="block border-l border-transparent py-1.5 pl-4 text-sm text-gray-600 transition-colors hover:border-gray-300 hover:text-gray-900 -ml-px"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            {section.items.map((item) => {
+              const href = `/learning/${item.slug}`;
+              const active = pathname === href;
+              return (
+                <li key={item.slug}>
+                  <Link
+                    href={href}
+                    onClick={() => onNavigate?.()}
+                    className={[
+                      "block border-l py-1.5 pl-4 text-sm transition-colors -ml-px",
+                      active
+                        ? "border-gray-900 font-medium text-gray-900"
+                        : "border-transparent text-gray-600 hover:border-gray-300 hover:text-gray-900",
+                    ].join(" ")}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       ))}
@@ -68,7 +81,7 @@ export function LearningSidebar({ sections }: LearningSidebarProps) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h7" />
             </svg>
           </span>
-          Topics
+          All pages
         </button>
       </div>
 
@@ -77,7 +90,7 @@ export function LearningSidebar({ sections }: LearningSidebarProps) {
           className="fixed inset-0 z-50 lg:hidden"
           role="dialog"
           aria-modal="true"
-          aria-label="Learning navigation"
+          aria-label="Learning pages"
         >
           <button
             type="button"
@@ -87,7 +100,7 @@ export function LearningSidebar({ sections }: LearningSidebarProps) {
           />
           <aside className="absolute left-0 top-0 flex h-full w-[min(20rem,88vw)] flex-col border-r border-gray-200 bg-white shadow-xl">
             <div className="flex items-center justify-between border-b border-gray-100 px-4 py-3">
-              <span className="text-sm font-semibold text-gray-900">On this page</span>
+              <span className="text-sm font-semibold text-gray-900">Learning</span>
               <button
                 type="button"
                 onClick={() => setMobileOpen(false)}

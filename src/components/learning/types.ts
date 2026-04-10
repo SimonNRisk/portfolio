@@ -1,6 +1,6 @@
 export type LearningNavItem = {
-  id: string;
-  /** Short label shown in the sidebar (typically 1–3 words). */
+  slug: string;
+  /** Short label in the sidebar (typically a few words). */
   label: string;
 };
 
