@@ -30,10 +30,10 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/#about" className="text-gray-600 hover:text-gray-900 transition-colors">
               About
             </Link>
-            <Link href="#projects" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/#projects" className="text-gray-600 hover:text-gray-900 transition-colors">
               Projects
             </Link>
             <Link href="/learning" className="text-gray-600 hover:text-gray-900 transition-colors">Learning</Link>
@@ -61,14 +61,14 @@ export default function Navbar() {
           <div className="md:hidden py-4">
             <div className="flex flex-col space-y-4">
               <Link
-                href="#about"
+                href="/#about"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link
-                href="#projects"
+                href="/#projects"
                 className="text-gray-600 hover:text-gray-900 transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
