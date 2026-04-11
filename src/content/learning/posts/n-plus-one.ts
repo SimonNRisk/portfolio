@@ -15,30 +15,51 @@ export const nPlusOnePost: LearningPost = {
     ),
     h3("Naive Approach"),
     p(
-      "Using an ORM, you likely structure your code like the following:"
+      "Using an ORM, you likely structure your code like the following: one query to load the current user’s friends, then another round of queries when you walk each friend and read their posts."
     ),
     code(
-      `// Pseudocode: load posts, then load each author in a loop
-const posts = await db.post.findMany({ take: 100 });
+      `# Assumes User has_many :friends, through: :friendships and has_many :posts
+user = User.find(user_id)
 
-for (const post of posts) {
-  post.author = await db.user.findUnique({ where: { id: post.authorId } });
-}`,
-      "typescript",
-      "Each iteration hits the database again → N extra queries after the first."
+# (1) One query: all friends for this user
+friends = user.friends.to_a
+
+# (2) One query per friend: that friend’s posts (here, latest post only)
+friends.each do |friend|
+  friend.posts.order(created_at: :desc).limit(1).to_a
+end`,
+      "ruby",
+      "ActiveRecord: one SELECT for friends, then one SELECT per friend for posts → 1 + N queries."
+    ),
+    p("Roughly the same work expressed as SQL (parameter placeholders are illustrative):"),
+    code(
+      `-- (1) Friends for user_id = ?
+SELECT users.*
+FROM users
+INNER JOIN friendships ON friendships.friend_id = users.id
+WHERE friendships.user_id = ?;
+
+-- (2) Executed once per friend_id returned above (N times)
+SELECT *
+FROM posts
+WHERE user_id = ?
+ORDER BY created_at DESC
+LIMIT 1;`,
+      "sql",
+      "(1) loads friend rows; (2) repeats for each friend — the classic N+1 shape."
     ),
     list(
       [
-        "Load 100 records in one SELECT.",
-        "Touch a relation on each row → 100 more SELECTs.",
-        "Total: 101 queries.",
+        "One SELECT loads the friend users for the given account.",
+        "Each time you load a friend’s posts, that is another SELECT (same shape, different `user_id`).",
+        "Total: 1 + N queries when there are N friends.",
       ],
       false
     ),
     mermaid(
       `flowchart LR
-  A[App] --> B[SELECT authors]
-  B --> C[SELECT books x N]
+  A[App] --> B[SELECT friends]
+  B --> C[SELECT posts × N]
   style C fill:#f3f4f6`,
       "Naive lazy-loading pattern"
     ),

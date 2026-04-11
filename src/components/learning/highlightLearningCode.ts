@@ -12,6 +12,7 @@ const BUNDLED_LANGS = [
   "bash",
   "sql",
   "python",
+  "ruby",
   "yaml",
   "markdown",
   "html",
@@ -23,6 +24,7 @@ type BundledLang = (typeof BUNDLED_LANGS)[number];
 const ALIASES: Record<string, BundledLang> = {
   ts: "typescript",
   js: "javascript",
+  rb: "ruby",
   sh: "bash",
   shell: "bash",
   yml: "yaml",

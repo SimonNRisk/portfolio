@@ -20,7 +20,7 @@ export type LearningMermaidBlock = {
 
 export type LearningCodeBlock = {
   type: "code";
-  /** Shiki / TextMate id, e.g. `typescript`, `bash`, `json` (see highlightLearningCode.ts aliases). */
+  /** Shiki / TextMate id, e.g. `typescript`, `ruby`, `bash`, `json` (see highlightLearningCode.ts aliases). */
   language: string;
   code: string;
   caption?: string;
