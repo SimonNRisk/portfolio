@@ -1,4 +1,4 @@
-import type { LearningBlock, LearningFigureBlock } from "./types";
+import type { LearningBlock, LearningCodeBlock, LearningFigureBlock } from "./types";
 
 export function h2(text: string): LearningBlock {
   return { type: "h2", text };
@@ -29,4 +29,9 @@ export function figure(
 /** Mermaid source (e.g. `flowchart LR` …). Renders client-side as SVG. */
 export function mermaid(diagram: string, caption?: string): LearningBlock {
   return { type: "mermaid", diagram, caption };
+}
+
+/** Syntax-highlighted code (Shiki on the server). Use a template literal for multi-line `code`. */
+export function code(code: string, language: string, caption?: string): LearningCodeBlock {
+  return { type: "code", code, language, caption };
 }

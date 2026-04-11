@@ -6,7 +6,7 @@ type LearningArticleProps = {
   post: LearningPost;
 };
 
-export function LearningArticle({ post }: LearningArticleProps) {
+export async function LearningArticle({ post }: LearningArticleProps) {
   return (
     <article className="rounded-2xl border border-gray-200/80 bg-white p-6 shadow-sm sm:p-8 md:p-10 lg:p-12">
       <header className="mb-10 border-b border-gray-100 pb-8">

@@ -18,13 +18,22 @@ export type LearningMermaidBlock = {
   caption?: string;
 };
 
+export type LearningCodeBlock = {
+  type: "code";
+  /** Shiki / TextMate id, e.g. `typescript`, `bash`, `json` (see highlightLearningCode.ts aliases). */
+  language: string;
+  code: string;
+  caption?: string;
+};
+
 export type LearningBlock =
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "p"; text: string }
   | { type: "list"; ordered: boolean; items: string[] }
   | LearningFigureBlock
-  | LearningMermaidBlock;
+  | LearningMermaidBlock
+  | LearningCodeBlock;
 
 /** A single learning page (sidebar entry + `/learning/[slug]`). */
 export type LearningPost = {

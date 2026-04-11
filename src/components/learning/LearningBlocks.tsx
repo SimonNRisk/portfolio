@@ -1,8 +1,9 @@
 import type { LearningBlock } from "@/content/learning/types";
 import { learningContentMeasure } from "./contentMeasure";
+import { highlightLearningCode } from "./highlightLearningCode";
 import { MermaidBlock } from "./MermaidBlock";
 
-function renderBlock(block: LearningBlock, index: number) {
+async function renderBlock(block: LearningBlock, index: number) {
   switch (block.type) {
     case "h2":
       return (
@@ -70,6 +71,21 @@ function renderBlock(block: LearningBlock, index: number) {
       );
     case "mermaid":
       return <MermaidBlock key={index} diagram={block.diagram} caption={block.caption} />;
+    case "code": {
+      const html = await highlightLearningCode(block.code, block.language);
+      return (
+        <figure key={index} className={`my-6 ${learningContentMeasure}`}>
+          <div
+            className="overflow-x-auto rounded-xl border border-gray-200 bg-[#f6f8fa] text-[13px] leading-normal shadow-sm [&_pre]:m-0 [&_pre]:bg-transparent [&_pre]:p-4 [&_pre]:font-mono [&_code]:font-mono"
+            // Static authored strings from the repo only.
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+          {block.caption ? (
+            <figcaption className="mt-2 text-sm text-gray-500">{block.caption}</figcaption>
+          ) : null}
+        </figure>
+      );
+    }
     default: {
       const _exhaustive: never = block;
       return _exhaustive;
@@ -81,6 +97,7 @@ type LearningBlocksProps = {
   blocks: LearningBlock[];
 };
 
-export function LearningBlocks({ blocks }: LearningBlocksProps) {
-  return <>{blocks.map((block, i) => renderBlock(block, i))}</>;
+export async function LearningBlocks({ blocks }: LearningBlocksProps) {
+  const nodes = await Promise.all(blocks.map((block, i) => renderBlock(block, i)));
+  return <>{nodes}</>;
 }

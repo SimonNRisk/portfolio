@@ -20,7 +20,7 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function LearningPostPage({ params }: PageProps) {
+export default async function LearningPostPage({ params }: PageProps) {
   const post = getLearningPost(params.slug);
   if (!post) notFound();
 
