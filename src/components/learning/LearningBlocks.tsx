@@ -1,4 +1,5 @@
 import type { LearningBlock } from "@/content/learning/types";
+import { learningContentMeasure } from "./contentMeasure";
 import { MermaidBlock } from "./MermaidBlock";
 
 function renderBlock(block: LearningBlock, index: number) {
@@ -20,7 +21,10 @@ function renderBlock(block: LearningBlock, index: number) {
       );
     case "p":
       return (
-        <p key={index} className="mt-4 max-w-3xl text-[15px] leading-relaxed text-gray-700 first:mt-0">
+        <p
+          key={index}
+          className={`mt-4 text-[15px] leading-relaxed text-gray-700 first:mt-0 ${learningContentMeasure}`}
+        >
           {block.text}
         </p>
       );
@@ -29,7 +33,7 @@ function renderBlock(block: LearningBlock, index: number) {
         return (
           <ol
             key={index}
-            className="mt-4 max-w-3xl list-decimal space-y-2 pl-6 text-[15px] leading-relaxed text-gray-700 marker:text-gray-400"
+            className={`mt-4 list-decimal space-y-2 pl-6 text-[15px] leading-relaxed text-gray-700 marker:text-gray-400 ${learningContentMeasure}`}
           >
             {block.items.map((item) => (
               <li key={item}>{item}</li>
@@ -40,7 +44,7 @@ function renderBlock(block: LearningBlock, index: number) {
       return (
         <ul
           key={index}
-          className="mt-4 max-w-3xl list-disc space-y-2 pl-6 text-[15px] leading-relaxed text-gray-700 marker:text-gray-400"
+          className={`mt-4 list-disc space-y-2 pl-6 text-[15px] leading-relaxed text-gray-700 marker:text-gray-400 ${learningContentMeasure}`}
         >
           {block.items.map((item) => (
             <li key={item}>{item}</li>
@@ -49,7 +53,7 @@ function renderBlock(block: LearningBlock, index: number) {
       );
     case "figure":
       return (
-        <figure key={index} className="my-8 max-w-3xl">
+        <figure key={index} className={`my-8 ${learningContentMeasure}`}>
           {/* eslint-disable-next-line @next/next/no-img-element -- content-defined paths from /public */}
           <img
             src={block.src}

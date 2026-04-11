@@ -1,4 +1,5 @@
 import type { LearningPost } from "@/content/learning/types";
+import { learningContentMeasure } from "./contentMeasure";
 import { LearningBlocks } from "./LearningBlocks";
 
 type LearningArticleProps = {
@@ -15,7 +16,9 @@ export function LearningArticle({ post }: LearningArticleProps) {
           <p className="mt-2 text-lg font-medium text-gray-600 sm:text-xl">{post.subtitle}</p>
         ) : null}
         {post.intro ? (
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-500 sm:text-[15px]">{post.intro}</p>
+          <p className={`mt-4 text-sm leading-relaxed text-gray-500 sm:text-[15px] ${learningContentMeasure}`}>
+            {post.intro}
+          </p>
         ) : null}
       </header>
 
