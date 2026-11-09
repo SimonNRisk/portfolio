@@ -33,7 +33,7 @@ const skills = [
       "I've developed scalable server-side apps and features with Ruby on Rails, Node.js, FastAPI, Flask, etc. I think distributed systems are super cool.",
   },
   {
-    name: "AI/ML Research",
+    name: "Systems Infrastructure",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
@@ -45,7 +45,7 @@ const skills = [
       </svg>
     ),
     description:
-      "Applying mathematical modeling and optimization techniques to build and improve machine learning and AI systems.",
+      "I enjoy working close to the foundations of software: building language parsers, shaping and traversing ASTs, and exploring database internals and infrastructure.",
   },
 ];
 
