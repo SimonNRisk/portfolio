@@ -13,14 +13,15 @@ export interface TimelineData {
 export const timelineData: TimelineData[] = [
   // Professional Experience Only
   {
-    title: "Software Engineer Intern",
+    title: "Software Engineering Intern",
     company: "Shopify",
     companyUrl: "https://www.shopify.com/",
-    details: "Incoming Software Engineer Intern at Shopify (S26).",
-    year: "Incoming S26",
+    details:
+      "I led work on local SSD caching for an experimental Rust analytics database used for observability. By sharing token spans, streamlining serialization across the WebAssembly boundary, and skipping unnecessary AST passes, I reduced ShopifyQL memory use by 24% and end-to-end P95 latency by 18%. I also helped ship seven visualizations that 500 merchants used in their first two weeks.",
+    year: "May 2026 - Sep. 2026",
     image: "/images/companies/shopify.svg",
-    startDate: "2026-01-01",
-    endDate: "2026-05-01",
+    startDate: "2026-05-01",
+    endDate: "2026-09-01",
     type: "professional",
   },
   {
@@ -60,11 +61,23 @@ export const timelineData: TimelineData[] = [
   },
   // Club Experience
   {
+    title: "Quantitative Developer",
+    company: "Queen's University Investment Counsel (QUIC)",
+    companyUrl: "https://www.quic.ca/",
+    details:
+      "I was QUIC's first engineering hire in its 23-year history, building risk infrastructure for its $3.4M portfolio. I designed an event-driven risk platform in Rust that streams market and position updates through Redpanda, keeps live state in Redis, and is monitored with Prometheus and Grafana.",
+    year: "Mar. 2026 - Present",
+    image: "/images/companies/queens.png",
+    startDate: "2026-03-01",
+    endDate: "present",
+    type: "volunteer",
+  },
+  {
     title: "Co-Chair",
     company: "QTMA",
     companyUrl: "https://www.instagram.com/queenstechmedia",
     details:
-      "Previously a Senior Software Developer, now Co-Chair at Queen's Technology & Media Association, a startup incubator for Queen's students.",
+      "I co-chair QTMA, a student-run product incubator. I help oversee four product teams, recruit members, advise on product direction, and run technical workshops for a community of 50+. We won two demo days, a first in the club's history, with a RAG tool that helps small businesses create organic content.",
     year: "Mar. 2025 - Present",
     image: "/images/companies/qtma.png",
     startDate: "2025-03-01",
@@ -72,11 +85,11 @@ export const timelineData: TimelineData[] = [
     type: "volunteer",
   },
   {
-    title: "Senior Project Manager",
+    title: "Senior Software Lead",
     company: "CREO Solutions",
     companyUrl: "https://www.creosolutions.ca/",
     details:
-      "Current Senior Project Manager, previous Project Manager and Software Engineer at CREO Solutions. CREO Solutions is Canada's premier student-run consultancy founded in 2004 at Queen’s University - we consult for SMBs, and I specifically work on digital transformation projects.",
+      "I lead software at CREO Solutions, a student-run consultancy, where I built and deployed a FastAPI support agent using Azure AI Search and Azure Speech. It brings in requests through webhooks, reads documents with OCR, checks context before using tools, and can escalate conversations to HubSpot. It handles around 3,000 inquiries a month.",
     year: "Mar. 2024 - Present",
     image: "/images/companies/creo.png",
     startDate: "2024-03-01",

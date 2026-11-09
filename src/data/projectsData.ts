@@ -10,6 +10,15 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "SimonKV",
+    description:
+      "I built SimonKV, a Bitcask-style embedded database in Rust. It stores data in checksummed log segments, uses an in-memory key directory for constant-time lookups, supports one writer alongside multiple readers, recovers after crashes, and compacts data atomically. Hint files brought recovery for 10 million records from 14.2 seconds to 1.1 seconds, while positional I/O improved P99 latency with 32 readers by 61%. I benchmarked it against redb and Fjall using the same fsync settings.",
+    imageUrl: "/images/simonkv.png",
+    technologies: ["Rust", "Database Internals", "Criterion", "cargo-fuzz"],
+    projectUrl: "https://github.com/SimonNRisk/simonkv",
+    date: "Jul 2026 - Present",
+  },
+  {
     title: "LinkedIn Content Generation & Analytics Platform",
     description:
       "A full-stack platform for generating, scheduling, and analyzing LinkedIn content. Built with Next.js frontend and FastAPI backend, featuring real-time API communication, OpenAI integration, and LinkedIn OAuth authentication.",
